@@ -17,7 +17,6 @@ const extractTextFromPdf = async  (file)=> {
             const page = await pdf.getPage(1)
             const content = await page.getTextContent()
             textContent = content.items.map((item)=>item.str).join('')
-            console.log('here the extraction team',textContent)
              resolve (textContent);
             }catch(error){
                 reject(error);

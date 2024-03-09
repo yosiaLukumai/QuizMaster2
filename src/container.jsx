@@ -36,8 +36,6 @@ import TextContext from "./TextContext";
         const answers = [result.correct_answer, result.incorrect_answer]
         const shuffledAnswer = shuffledArray(answers);
         setShuffledAnswers(shuffledAnswer)
-        console.log('shuffledAnswersFFFFFFFFFFFFFFF',shuffledAnswer[0])
-        console.log('shuffledAnswersFFFFFFFFFFFFFFFKKKKKK',result.correct_answer)
         
     },[sendClicked, 
         extractedText,

@@ -2,7 +2,6 @@ import { useContext, useState } from 'react'
 import {FaUpload} from 'react-icons/fa'
 import extractTextFromPdf from './extractTextPdf';
 import TextContext from './TextContext';
-import ChatComponent from './GPTapi';
 
 const UploadUserDoc = ()=>{
     const [selectedFile, setSelectedFile] = useState(null);   
@@ -14,20 +13,15 @@ const UploadUserDoc = ()=>{
     
 
     const handleUpload = ()=>{
-        console.log('Button is Clicked')
         if(selectedFile){
-            //console.log('Selected File', selectedFile)
 
             const reader = new FileReader();
             reader.onload =async (event) =>{
                 const fileContent = event.target.result;
-                //console.log('File content', fileContent)
             if (selectedFile.type=== 'application/pdf'){
                  extractTextFromPdf(selectedFile).then((textContent)=>{
-                    console.log('from the  TEEEEEAM',textContent)
                     if(textContent !=='' || textContent!== null){
                         setExtractedText(textContent)
-                        console.log('Text extracted from the PDF', textContent)
                     }else if(textContent==='' || textContent === null){
                             console.log('it is SO empTYYY');
                     }
