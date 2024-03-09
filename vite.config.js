@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ["**/*.JPG"],
+   esbuild: {
+    supported: {
+      'top-level-await': true //browsers can handle top-level-await features
+    },
+  }
 })
