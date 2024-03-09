@@ -1,7 +1,9 @@
 import React,{useState, useEffect} from 'react';
-
 import OpenAI from 'openai';
-const apiKey  = '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'
+
+
+
+const apiKey  = import.meta.env.VITE_API_KEY;
 const openai = new OpenAI({apiKey,dangerouslyAllowBrowser: true})
 
 
